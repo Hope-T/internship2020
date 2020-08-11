@@ -1,0 +1,40 @@
+1. Fuzzing
+Observe communication and inputs: The fuzzing attacker observes the target system looking for inputs and communications between modules, subsystems, or systems.
+
+Network sniffling. Using a network sniffer such as wireshark, the attacker observes communications into and out of the target system.
+
+Monitor API execution. 
+
+Using a tool such as ktrace, strace, APISpy, or another debugging tool, the attacker observes the system calls and API calls that are made by the target system, and the nature of their parameters.
+
+Observe inputs using web inspection tools (OWASP's WebScarab, Paros, TamperData, TamperIE, etc.).
+
+Generate fuzzed inputs: Given a fuzzing tool, a target input or protocol, and limits on time, complexity, and input variety, generate a list of inputs to try. 
+
+Although fuzzing is random, it is not exhaustive. 
+
+Parameters like length, composition, and how many variations to try are important to get the most cost-effective impact from the fuzzer.
+
+Generate fuzz inputs that attack boundary cases of protocol fields, inputs, or other communications limits. 
+
+In binary situations, approach each bit of an individual field with on and off.
+
+Attempt arguments to system calls or APIs. 
+
+The variations include payloads that, if they were successful, could lead to a compromise on the system.
+
+Observe the outcome: Observe the outputs to the inputs fed into the system by fuzzers and see if anything interesting happens. 
+
+If failure occurs, determine why that happened. 
+
+Figure out the underlying assumption that was invalidated by the input.
+
+Craft exploit payloads: Put specially crafted input into the system that leverages the weakness identified through fuzzing and allows to achieve the goals of the attacker. 
+
+Fuzzers often reveal ways to slip through the input validation filters and introduce unwanted data into the system.
+
+Identify and embed shell code for the target system.
+
+Embed higher level attack commands in the payload. (e.g., SQL, PHP, server-side includes, etc.).
+
+Induce denial of service by exploiting resource leaks or bad error handling.
