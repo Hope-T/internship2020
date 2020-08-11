@@ -7,7 +7,7 @@ investigate Protege, DOG4DAG, VOWL, and other ontology tools.
 
 # Before Running
 Ensure that python3 and NLTK is installed.
-There is extensive documentation in each of the files.
+There is extensive documentation in each of the files, if you want to read more.
 
 # Running prototypeParseText.py
 This file was the basis for the later file, parseText.py.
